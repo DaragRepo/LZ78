@@ -107,7 +107,6 @@ public class Algorithm {
             } else {
                 int index = tag.index;
                 String str = map.get(index);
-                System.out.println(str);
                 decompressed += str;
                 decompressed += tag.c;
                 map.put(counter, str + tag.c);

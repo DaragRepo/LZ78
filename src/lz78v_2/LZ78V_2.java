@@ -19,12 +19,10 @@ public class LZ78V_2 {
  
     public static void main(String[] args) {
 
-        Map<String, Integer> dictionary = new HashMap();
-
-        LinkedList<Tag> li = new LinkedList();
         // the input string 
 
-        String s = "ABAABABAABABBBBBBBBBBA";
+//        String s = "ABAABABAABABBBBBBBBBBA";
+        String s = "/WED/WE/WEE/WEB";
         Algorithm a = new Algorithm(s);
         System.out.println(a);
 
