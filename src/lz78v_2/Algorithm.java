@@ -31,28 +31,27 @@ public class Algorithm {
 
 //        String s = "ABAABABAABABBBBBBBBBBA";
         // loop through the string 
-        int c1 = 1;
+          int c1 = 1;
         int j = 0;
         for (int i = 0; i < s.length(); i++) {
 
             if (j > i) {
                 continue;
             }
+ 
             // if the current character doesn't exist in the dictionary 
 
             if (!dictionary.containsKey(String.valueOf(s.charAt(i)))) {
-
                 Tag tag = new Tag(0, s.charAt(i));
                 li.add(tag);
-                dictionary.put(String.valueOf(s.charAt(i)), c1);
-                 System.out.println(dictionary);
+                dictionary.put(String.valueOf(s.charAt(i)), c1 );
                 c1++;
 
             } // if the current character already in the dictionary 
             else {
-
+              
                 // loop till you find a sequence that doesn't exist in the dictionary 
-                String history = "";
+               String  history = "";
                 history += s.charAt(i);
                 j = i + 1;
                 // while it does exist keep looping till you find a string that doesn't exist 
@@ -63,18 +62,25 @@ public class Algorithm {
 
                     j++;
                 }
+                if (j == s.length() - 1 && dictionary.containsKey(history)) {
+                    history += s.charAt(s.length() - 1);
+                }
 
                 // add this new string to the dictionary 
                 if (!dictionary.containsKey(history)) {
-                    dictionary.put(history, c1);
+
+                    dictionary.put(history , c1);
                     c1++;
                 }
                 if (i == s.length() - 1 && history.length() != 0) {
+                    
                     int index = dictionary.get(history);
                     Tag t = new Tag(index, '\u0000');
                     li.add(t);
                 } else {
+
                     // get last index in the dictionary which contains this letter 
+                    
                     int index = dictionary.get(history.substring(0, history.length() - 1));
 //                System.out.println(history + " " + index + " " + i + " " + j);
                     char addedChar = history.charAt(history.length() - 1);
@@ -82,7 +88,7 @@ public class Algorithm {
                     li.add(t);
                 }
             }
-
+            
         }
        
         return li;
