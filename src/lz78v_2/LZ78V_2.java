@@ -22,6 +22,7 @@ public class LZ78V_2 {
         // the input string 
 
         String s = "ABAABABAABABBBBBBBBBBA";
+//        String s = "/WED/WE/WEE/WEB";
         Algorithm a = new Algorithm(s);
         System.out.println(a);
 
